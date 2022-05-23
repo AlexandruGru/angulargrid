@@ -3,4 +3,5 @@
   <p>{{ book.author }}</p>
   <img [src]="book.image" />
   <p>{{ book.price.value | currency:'EUR' }}</p>
+  <input (input)="inputHandler($event)" type="text">
 </div>

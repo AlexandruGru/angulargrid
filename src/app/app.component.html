@@ -1,8 +1,9 @@
 <div class="container">
   <h1>Books grid</h1>
   <button (click)="toggleShow()" [ngClass]="{blue: show === true, green: show === false}">{{ buttonText }}</button>
+  <div>here will be the value from input of card: {{inputValue}}</div>
   <div class="grid" *ngIf="show; else noGrid">
-    <app-card *ngFor="let elem of books" [book]="elem"></app-card>
+    <app-card (inputEvent)="addInputValue($event)" *ngFor="let elem of books" [book]="elem"></app-card>
   </div>
   <ng-template #noGrid><p>...</p></ng-template>
 </div>

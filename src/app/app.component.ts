@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { RequestService } from './service/request.service';
-import { Book } from './interface/book';
 
 @Component({
   selector: 'app-root',
@@ -12,18 +11,24 @@ export class AppComponent implements OnInit {
   show: boolean = false;
   books: any = {};
   buttonText: string = 'Show books';
+  inputValue: string = '';
 
   constructor(private booksRequest: RequestService) {}
 
   toggleShow(): void {
     this.show = !this.show;
-    this.show ? (this.buttonText = 'Hide books') : (this.buttonText = 'Show books');
+    this.show
+      ? (this.buttonText = 'Hide books')
+      : (this.buttonText = 'Show books');
   }
-
   onRequestService(): void {
     this.booksRequest
       .getBooks()
       .subscribe((response) => (this.books = response));
+  }
+  addInputValue(value: string) {
+    this.inputValue = value
+    console.log('parents value', value)
   }
   ngOnInit(): void {
     this.onRequestService();
