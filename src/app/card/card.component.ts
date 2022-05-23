@@ -13,10 +13,9 @@ export class CardComponent {
   }
 
   @Input() book: any;
-  
+
   @Output() inputEvent = new EventEmitter<string>();
   addNewInputValue(value: string) {
     this.inputEvent.emit(value);
-    console.log('value',value)
   }
 }

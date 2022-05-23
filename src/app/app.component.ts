@@ -28,7 +28,6 @@ export class AppComponent implements OnInit {
   }
   addInputValue(value: string) {
     this.inputValue = value
-    console.log('parents value', value)
   }
   ngOnInit(): void {
     this.onRequestService();
