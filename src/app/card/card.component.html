@@ -1,0 +1,6 @@
+<div class="card_container">
+  <h3>{{ book.title }}</h3>
+  <p>{{ book.author }}</p>
+  <img [src]="book.image" />
+  <p>{{ book.price.value | currency:'EUR' }}</p>
+</div>

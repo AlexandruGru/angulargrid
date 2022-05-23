@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  text-align: center;
+}
+.container > button {
+  margin: 10px 0;
+  font-size: 20px;
+  width: 200px;
+}
+.grid {
+  width: 900px;
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  justify-content: center;
+}
+.blue {
+  color: blue;
+}
+.green {
+  color: green;
+}
